@@ -1,0 +1,200 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://scenes/StormEagle.gd" type="Script" id=1]
+[ext_resource path="res://sprites/storm_eagle/flying/2.png" type="Texture" id=2]
+[ext_resource path="res://sprites/storm_eagle/diving/0.png" type="Texture" id=3]
+[ext_resource path="res://sprites/storm_eagle/diving/1.png" type="Texture" id=4]
+[ext_resource path="res://sprites/storm_eagle/flying/0.png" type="Texture" id=5]
+[ext_resource path="res://sprites/storm_eagle/flying/1.png" type="Texture" id=6]
+[ext_resource path="res://sprites/storm_eagle/idle/1.png" type="Texture" id=7]
+[ext_resource path="res://sprites/storm_eagle/shooting/0.png" type="Texture" id=8]
+[ext_resource path="res://sprites/storm_eagle/shooting/1.png" type="Texture" id=9]
+[ext_resource path="res://sprites/storm_eagle/spitting/0.png" type="Texture" id=10]
+[ext_resource path="res://sprites/storm_eagle/spitting/1.png" type="Texture" id=11]
+[ext_resource path="res://sprites/storm_eagle/spitting/2.png" type="Texture" id=12]
+
+[sub_resource type="Animation" id=5]
+resource_name = "diving"
+length = 0.2
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 3 ), ExtResource( 4 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "falling"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 2 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 3.16, -37.35 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "flying"
+length = 0.4
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 2 ), ExtResource( 6 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 3.16, -37.35 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 7 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 0, -27.08 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "shooting"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.015313, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 8 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( -5.82, -27.08 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "spitting"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.6 ),
+"transitions": PoolRealArray( 0.353553, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 10 ), ExtResource( 11 ), ExtResource( 12 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ Vector2( 3.16, -37.35 ) ]
+}
+
+[sub_resource type="CapsuleShape2D" id=1]
+radius = 10.4568
+height = 29.8997
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+position = Vector2( 533.748, 310.734 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+offset = Vector2( 3.16, -37.35 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/diving = SubResource( 5 )
+anims/falling = SubResource( 7 )
+anims/flying = SubResource( 2 )
+anims/idle = SubResource( 3 )
+anims/shooting = SubResource( 4 )
+anims/spitting = SubResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, -24.53 )
+shape = SubResource( 1 )
+
