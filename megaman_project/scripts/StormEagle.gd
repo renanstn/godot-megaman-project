@@ -14,29 +14,26 @@ func _physics_process(delta):
 	
 	motion.y += GRAVITY
 	
-	# Testes de animação
+	# Fly
 	if Input.is_action_pressed("ui_up"):
 		motion.y = -200
 		animation = "flying"
 	
+	# Shoot
 	if Input.is_action_pressed("ui_select") and is_on_floor():
 		animation = "shooting"
 		shooting = true
 	else:
 		shooting = false
-		
-	if Input.is_action_just_pressed("ui_down") and not is_on_floor():
-		animation = "idle"
 	
+	# Left / Rigth
 	if Input.is_action_pressed("ui_left"):
-#		$AnimationPlayer.play("diving")
 		animation = "flying"
 		moving = true
 		$Sprite.set_scale(Vector2(1,1))
 		motion.x = -SPEED
 		
 	elif Input.is_action_pressed("ui_right"):
-#		$AnimationPlayer.play("spitting")
 		moving = true
 		animation = "flying"
 		$Sprite.set_scale(Vector2(-1,1))

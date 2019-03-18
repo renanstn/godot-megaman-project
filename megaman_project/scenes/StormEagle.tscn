@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=2]
 
-[ext_resource path="res://scenes/StormEagle.gd" type="Script" id=1]
+[ext_resource path="res://scripts/StormEagle.gd" type="Script" id=1]
 [ext_resource path="res://sprites/storm_eagle/flying/2.png" type="Texture" id=2]
 [ext_resource path="res://sprites/storm_eagle/diving/0.png" type="Texture" id=3]
 [ext_resource path="res://sprites/storm_eagle/diving/1.png" type="Texture" id=4]
@@ -13,7 +13,7 @@
 [ext_resource path="res://sprites/storm_eagle/spitting/1.png" type="Texture" id=11]
 [ext_resource path="res://sprites/storm_eagle/spitting/2.png" type="Texture" id=12]
 
-[sub_resource type="Animation" id=5]
+[sub_resource type="Animation" id=1]
 resource_name = "diving"
 length = 0.2
 loop = true
@@ -30,7 +30,7 @@ tracks/0/keys = {
 "values": [ ExtResource( 3 ), ExtResource( 4 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=2]
 resource_name = "falling"
 length = 0.3
 tracks/0/type = "value"
@@ -58,8 +58,7 @@ tracks/1/keys = {
 "values": [ Vector2( 3.16, -37.35 ) ]
 }
 
-[sub_resource type="Animation" id=2]
-resource_name = "flying"
+[sub_resource type="Animation" id=3]
 length = 0.4
 loop = true
 tracks/0/type = "value"
@@ -87,8 +86,7 @@ tracks/1/keys = {
 "values": [ Vector2( 3.16, -37.35 ) ]
 }
 
-[sub_resource type="Animation" id=3]
-resource_name = "idle"
+[sub_resource type="Animation" id=4]
 length = 0.1
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
@@ -115,8 +113,7 @@ tracks/1/keys = {
 "values": [ Vector2( 0, -27.08 ) ]
 }
 
-[sub_resource type="Animation" id=4]
-resource_name = "shooting"
+[sub_resource type="Animation" id=5]
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Sprite:texture")
@@ -170,7 +167,7 @@ tracks/1/keys = {
 "values": [ Vector2( 3.16, -37.35 ) ]
 }
 
-[sub_resource type="CapsuleShape2D" id=1]
+[sub_resource type="CapsuleShape2D" id=7]
 radius = 10.4568
 height = 29.8997
 
@@ -186,15 +183,15 @@ texture = ExtResource( 2 )
 offset = Vector2( 3.16, -37.35 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-anims/diving = SubResource( 5 )
-anims/falling = SubResource( 7 )
-anims/flying = SubResource( 2 )
-anims/idle = SubResource( 3 )
-anims/shooting = SubResource( 4 )
+anims/diving = SubResource( 1 )
+anims/falling = SubResource( 2 )
+anims/flying = SubResource( 3 )
+anims/idle = SubResource( 4 )
+anims/shooting = SubResource( 5 )
 anims/spitting = SubResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
 position = Vector2( 0, -24.53 )
-shape = SubResource( 1 )
+shape = SubResource( 7 )
 
